@@ -15,9 +15,9 @@ class UsersTableSeeder extends Seeder
         $users = [];
         $faker = Faker\Factory::create();
         for($i=0;$i<5;$i++){
-            $avatar_path = '/var/www/larashop-api/public/images/users';
+            $avatar_path = 'C:\xampp\htdocs\vue-project\clone\larashop-api\public\images\users';
             $avatar_fullpath = $faker->image( $avatar_path, 200, 250, 'people', true, true, 'people');
-            $avatar = str_replace($avatar_path . '/' , '', $avatar_fullpath);
+            $avatar = str_replace($avatar_path , '', $avatar_fullpath);
             $users[$i] = [
                 'name'       => $faker->name,
                 'email'      => $faker->unique()->safeEmail,

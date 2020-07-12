@@ -14,16 +14,18 @@ class BooksTableSeeder extends Seeder
     {
         $books = [];
         $faker = Faker\Factory::create();
-        $image_categories = ['abstract', 'animals', 'business', 'cats', 'city', 'food',
-        'nature', 'technics', 'transport'];
-        for($i=0;$i<25;$i++){
+        $image_categories = [
+            'abstract', 'animals', 'business', 'cats', 'city', 'food',
+            'nature', 'technics', 'transport'
+        ];
+        for ($i = 0; $i < 25; $i++) {
             $title = $faker->sentence(mt_rand(3, 6));
             $title = str_replace('.', '', $title);
             $slug = str_replace(' ', '-', strtolower($title));
             $category = $image_categories[mt_rand(0, 8)];
-            $cover_path = '/var/www/larashop-api/public/images/books';
-            $cover_fullpath = $faker->image( $cover_path, 300, 500, $category, true, true, $category);
-            $cover = str_replace($cover_path . '/' , '', $cover_fullpath);
+            $cover_path = 'C:\xampp\htdocs\vue-project\clone\larashop-api\public\images\books';
+            $cover_fullpath = $faker->image($cover_path, 300, 500, $category, true, true, $category);
+            $cover = str_replace($cover_path, '', $cover_fullpath);
             $books[$i] = [
                 'title' => $title,
                 'slug' => $slug,

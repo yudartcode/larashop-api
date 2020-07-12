@@ -91,7 +91,7 @@ class ShopController extends Controller
     protected function getServices($data)
     {
         $url_cost = "https://api.rajaongkir.com/starter/cost";
-        $key="YOUR_RAJA_ONGKIR_API_KEY";
+        $key="6be748503a0d389897bc5b21fb55322e";
         $postdata = http_build_query($data);
         $curl = curl_init();
         curl_setopt_array($curl, [
